@@ -1,0 +1,84 @@
+name: Build Beat Marker Executables
+
+# Controls when the workflow will run
+on:
+  push:
+    branches: [ main ] # Runs on pushes to the main branch
+  release:
+    types: [ created ] # Runs when a new release is published on GitHub
+
+jobs:
+  build:
+    # Use a matrix strategy to run builds on different OSes
+    strategy:
+      matrix:
+        os: [ubuntu-latest, macos-latest, windows-latest]
+        include: # Add specific settings for each OS
+          - os: ubuntu-latest
+            artifact_suffix: linux
+            executable_name: BeatMarker
+            executable_path: dist/BeatMarker
+          - os: macos-latest
+            artifact_suffix: macos
+            executable_name: BeatMarker
+            executable_path: dist/BeatMarker
+          - os: windows-latest
+            artifact_suffix: windows
+            executable_name: BeatMarker.exe # Windows needs .exe
+            executable_path: dist/BeatMarker.exe
+
+    runs-on: ${{ matrix.os }} # Use the OS specified in the matrix
+
+    steps:
+      # 1. Check out the repository code
+      - name: Check out repository
+        uses: actions/checkout@v4
+
+      # 2. Set up Python environment
+      - name: Set up Python 3.11
+        uses: actions/setup-python@v5
+        with:
+          python-version: '3.11' # You can specify other versions if needed
+
+      # 3. Install dependencies (Python libs + PyInstaller)
+      - name: Install dependencies
+        run: |
+          python -m pip install --upgrade pip
+          pip install pyinstaller mutagen colorama
+          # If you create a requirements.txt, you could use:
+          # pip install -r requirements.txt pyinstaller
+
+      # 4. Build the executable using PyInstaller
+      - name: Build executable with PyInstaller
+        run: |
+          pyinstaller --onefile \
+                      --name BeatMarker \
+                      beat_marker_generator.py
+        # --onefile: Bundle everything into a single file
+        # --name: Sets the base name of the output executable (PyInstaller adds .exe on Windows)
+        # beat_marker_generator.py: Your main script file
+
+      # 5. Prepare artifact name (include OS and potentially release tag)
+      - name: Determine Artifact Name
+        id: artifact_name # Give step an ID to reference outputs
+        shell: bash
+        run: |
+          ARTIFACT_BASENAME="BeatMarker-${{ matrix.artifact_suffix }}"
+          # If this is triggered by a release, append the tag name
+          if [ "${{ github.event_name }}" == "release" ]; then
+            TAG_NAME="${{ github.ref_name }}"
+            # Sanitize tag name slightly if needed (optional)
+            SANITIZED_TAG=$(echo $TAG_NAME | sed 's/[^a-zA-Z0-9._-]/-/g')
+            ARTIFACT_NAME="${ARTIFACT_BASENAME}-${SANITIZED_TAG}"
+          else
+            ARTIFACT_NAME="${ARTIFACT_BASENAME}"
+          fi
+          echo "name=${ARTIFACT_NAME}" >> $GITHUB_OUTPUT
+
+      # 6. Upload the built executable as a workflow artifact
+      - name: Upload Artifact
+        uses: actions/upload-artifact@v4
+        with:
+          name: ${{ steps.artifact_name.outputs.name }} # Use the name determined in the previous step
+          path: ${{ matrix.executable_path }} # Path to the executable created by PyInstaller
+          retention-days: 7 # Optional: How long to keep artifacts for non-release builds
