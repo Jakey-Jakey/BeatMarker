@@ -51,11 +51,7 @@ There are two ways to use Beat Marker:
     ```bash
     pip install mutagen colorama
     ```
-    *(Alternatively, if a `requirements.txt` file is provided):*
-    ```bash
-    pip install -r requirements.txt
-    ```
-    *(Note: The script includes fallbacks and will run without these, but with reduced functionality/visuals).*
+    *(Note: The script includes fallbacks and will run without these, but with no reduced functionality).*
 
 ## Usage
 
