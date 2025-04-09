@@ -51,9 +51,7 @@ jobs:
       # 4. Build the executable using PyInstaller
       - name: Build executable with PyInstaller
         run: |
-          pyinstaller --onefile \
-                      --name "${{ matrix.executable_name }}" \
-                      beat_marker_generator.py
+          pyinstaller --onefile --name="${{ matrix.executable_name }}" beat_marker_generator.py
 
       # 5. Prepare artifact name (include OS and potentially release tag)
       - name: Determine Artifact Name
