@@ -60,11 +60,11 @@ Arrow Vortex helps us find the exact BPM and the timing offset needed to align t
     *   Press `Spacebar` to play the audio. Listen carefully throughout the song. Do the ticks align perfectly with the beat?
     *   If the ticks drift, your song might have **variable BPM**, which complicates marker generation. Consistent BPM is ideal. If ticks don't match even at the start, go back to the `Adjust sync...` window (`Shift+S`), select a different BPM result (if available), click `Apply BPM`, and listen again.
 
-6.  **Determine POSITIVE Offset:**
-    *   The goal is to find how much silence needs to be added at the beginning so that the *first beat you want marked* falls exactly on a beat grid line *after* time `0.000`.
-    *   Go back to the `Adjust sync...` window (`Shift+S`).
-    *   Visually identify the very start of the first beat/sound you want your markers to align with in the waveform preview within the sync window or the main window.
-    *   Use the `Move first beat` buttons ![Arrow Vortex move first beat buttons](https://github.com/jakey-jakey/BeatMarker/assets/10910993/07c46b65-062a-4603-b505-252a3d08fa34){style="height: 1em; display: inline;"} to shift the audio relative to the beat grid.
+6.  **Determine Offset:**
+    *   The goal is to find how much silence needs to be added at the beginning so that the beats line up perfectly.
+    *   Go back to the `Adjust sync...` window (`Shift+S`). It should have already decided the `Music offset:`
+    *   Scroll around the waveform and identify where you want your bars and beats to align
+    *   Use the `Move first beat` buttons to shift the audio relative to the beat grid.
     *   **Keep clicking the arrows until the start of your desired first beat aligns visually with a grid line, AND the `Music offset:` value shown is POSITIVE (greater than 0).** It doesn't have to be exactly `0.000`; you just need the *correct positive value* representing the necessary padding.
         ![Arrow Vortex Adjust Sync window showing a negative offset initially](path/to/your/av_sync_negative.png)
         *(Example: Initially negative offset. Use "Move first beat" buttons to make this positive)*
