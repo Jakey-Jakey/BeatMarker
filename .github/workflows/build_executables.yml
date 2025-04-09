@@ -51,7 +51,7 @@ jobs:
       # 4. Build the executable using PyInstaller
       - name: Build executable with PyInstaller
         run: |
-          pyinstaller --onefile --name BeatMarker beat_marker_generator.py
+          pyinstaller --onefile beat_marker_generator.py
         # Command is now on a single line
 
       # 5. Prepare artifact name (include OS and potentially release tag)
