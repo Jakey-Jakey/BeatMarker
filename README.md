@@ -5,8 +5,7 @@
 
 A stylish command-line tool to generate timestamp markers based on a song's duration, BPM, and desired beat interval. Ideal for creating marker lists for video editing software (like DaVinci Resolve, Premiere Pro, Final Cut Pro) or other applications requiring timed cues.
 
-![Screenshot Placeholder](https://via.placeholder.com/800x400/cccccc/969696.png?text=Add+a+Screenshot+or+GIF+Here!)
-*(Suggestion: Replace the placeholder above with an actual screenshot or GIF of Beat Marker in action!)*
+![Screenshot Placeholder](https://github.com/Jakey-Jakey/BeatMarker/raw/main/Program%20Screenshot.jpg)
 
 ## Features
 
