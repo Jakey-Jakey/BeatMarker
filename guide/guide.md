@@ -48,12 +48,15 @@ Arrow Vortex helps us find the exact BPM and the timing offset needed so the fir
 ![Arrow Vortex Adjust Sync window with BPM results](https://github.com/Jakey-Jakey/BeatMarker/blob/42ef9d6d62ce4db9c4483c77705b3e8f9aa0f04e/guide/Adjust%20Sync%20window.jpg)
 6.  **Confirm BPM:**
     *   Press `F3` (toggle beat ticks) and `Spacebar` (play). Listen throughout the song. Ensure ticks align with the beat. If not, try another BPM result or note potential variable BPM.
-7.  **Determine Positive Offset:**
-    *   \[OPTIONAL\] In the `Adjust sync...` window (`Shift+S`), identify the beat where you want markers to start (e.g., the first strong downbeat).
-    *   Use the `Move first beat` buttons to align this chosen beat visually with a grid line.
-    *   **Crucial:** Adjust until the `Music offset:` value is **POSITIVE** (e.g., `0.123`, `1.500`). This positive value represents the silence needed later. **If the offset is negative, keep adjusting alignment until it becomes positive.**
-        *(Image Placeholder: AV Adjust Sync window showing final POSITIVE Music offset value)*
-    *   Listen again (`F3` ticks on) to confirm the alignment sounds correct with the metronome.
+7.  **Ensure a Positive Offset:**
+    *   The primary goal here is to ensure the `Music offset:` value shown in the `Adjust sync...` window (`Shift+S`) is **POSITIVE**. A positive offset (e.g., `0.123`, `1.500`) is required so you can correctly add silence at the beginning of your track in Audacity later.
+    *   Use the `Move first beat` buttons to shift the audio relative to the grid. Keep clicking until the `Music offset:` value becomes positive.
+        ![Arrow Vortex Adjust Sync window showing positive offset](images/Adjust Sync window.jpg) *(Adjust image if needed to show a clear positive value)*
+    *   **Guideline:** Aim for enough positive offset so there's *at least* one empty measure's worth of time (typically 2-4 seconds, depending on the song's BPM) before the first sound you intend to place a marker on. This provides necessary padding.
+    *   **(Optional) Align to a Specific Beat:** While adjusting for a positive offset, you *can* also try to visually align a specific beat (like the first strong downbeat you care about) with a grid line if it helps you visualize the timing. However, the most critical outcome is achieving a positive offset value.
+        ![Arrow Vortex Waveform showing beat aligned to grid](images/First Waveform.jpg) *(Adjust image if needed)*
+    *   **Final Check:** Before proceeding, double-check that the `Music offset:` displayed is positive. If it's negative or zero, continue using the `Move first beat` buttons.
+    *   Listen again (`F3` ticks on) to confirm the timing sounds correct relative to the metronome with the current offset.
     *   Note down the final **positive** `Music offset:` value (in seconds) and the confirmed **BPM**.
 
 ---
