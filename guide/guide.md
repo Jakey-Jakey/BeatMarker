@@ -41,7 +41,7 @@ Arrow Vortex helps us find the exact BPM and the timing offset needed so the fir
 1.  **Open Arrow Vortex:** Launch `ArrowVortex.exe`.
 2.  **Load the OGG:** Drag and drop the `.ogg` file you created (e.g., `audio_for_analysis.ogg`) into the Arrow Vortex window.
 3.  **View Waveform:** Go to `View > Time based (C-mod)` and zoom (`Ctrl + Mouse Wheel`) to see the waveform clearly.
-    *(Image Placeholder: AV Waveform View)*
+    ![Arrow Vortex Waveform View](guide/First Waveform.jpg)
 4.  **Find BPM:**
     *   Press `Shift + S` (or go to `Tempo > Adjust sync...`) to open the **ADJUST SYNC** window.
     *   Click `Find BPM`. Select the most likely BPM result (often highest confidence %) and click `Apply BPM`.
