@@ -52,14 +52,13 @@ Arrow Vortex helps us find the exact BPM and the timing offset needed so the fir
     *   Press `Spacebar` to play the audio. Listen throughout the song. Do the ticks align perfectly with the beat?
     *   If ticks drift, the song might have variable BPM (harder to work with). If they don't match the start, try another BPM result from the `Adjust sync...` window if available.
 6.  **Determine Positive Offset:**
-    *   The goal is to find how much silence to add later in Audacity.
-    *   Go back to the `Adjust sync...` window (`Shift+S`).
-    *   Visually identify the beat in the waveform where you want your markers to effectively start (e.g., the first strong downbeat after any intro fade).
-    *   Use the `Move first beat` buttons (left/right arrows in the sync window) to shift the audio relative to the beat grid.
-    *   **Crucially, keep adjusting until the start of your desired first beat aligns visually with a grid line AND the `Music offset:` value shown is POSITIVE (e.g., `0.123`, `1.500`).** A positive offset means the beat occurs *after* time zero, which is necessary for adding silence correctly. **If the offset is initially negative, you MUST use the `Move first beat` buttons until it becomes positive.**
-        *(Image Placeholder: AV Adjust Sync window showing a positive offset after adjustment)*
-    *   Listen again with beat ticks (`F3`) on to confirm this alignment sounds correct for where you want the markers to start relative to the music. While aligning to a downbeat is common, the most important thing is that the positive offset value results in the metronome sounding correct for your chosen starting point.
-    *   Note down the final **positive** `Music offset:` value (this is the **Offset in seconds**) and the final **BPM** value.
+    *   In the `Adjust sync...` window (`Shift+S`), identify the beat where you want markers to start (e.g., the first strong downbeat).
+    *   Use the `Move first beat` buttons to align this chosen beat visually with a grid line.
+        *(Image Placeholder: AV Waveform showing beat aligned to grid)*
+    *   **Crucial:** Adjust until the `Music offset:` value is **POSITIVE** (e.g., `0.123`, `1.500`). This positive value represents the silence needed later. **If the offset is negative, keep adjusting alignment until it becomes positive.**
+        *(Image Placeholder: AV Adjust Sync window showing final POSITIVE Music offset value)*
+    *   Listen again (`F3` ticks on) to confirm the alignment sounds correct with the metronome.
+    *   Note down the final **positive** `Music offset:` value (in seconds) and the confirmed **BPM**.
 
 ---
 
