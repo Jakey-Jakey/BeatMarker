@@ -57,7 +57,7 @@ Arrow Vortex helps us find the exact BPM and the timing offset needed so the fir
         ![Arrow Vortex Waveform showing beat aligned to grid](images/First Waveform.jpg) *(Adjust image if needed)*
     *   **Final Check:** Before proceeding, double-check that the `Music offset:` displayed is positive. If it's negative or zero, continue using the `Move first beat` buttons.
     *   Listen again (`F3` ticks on) to confirm the timing sounds correct relative to the metronome with the current offset.
-    *   Note down the final **positive** `Music offset:` value (in seconds) and the confirmed **BPM**.
+    *   Note down the final **positive** `Music offset:` value and the confirmed **BPM**.
 
 ---
 
