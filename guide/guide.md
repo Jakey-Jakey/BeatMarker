@@ -141,6 +141,7 @@ With `beat_markers.txt` generated, here’s how to get those markers into your N
     *   Open the `beat_markers.txt` file (containing timecode values).
     *   Copy the entire list of timecodes.
     *   Go to the [editingtools.io Marker Converter](https://editingtools.io/marker/) website.
+    *   Select `Text (Copy&Paste)` in the `From` selector.
     *   Paste your copied timecode list into the input field.
     *   Choose the appropriate **Output Format** for your specific NLE (e.g., CSV for DaVinci Resolve, FCPX XML for Final Cut Pro, etc.).
     *   Download the converted marker file.
