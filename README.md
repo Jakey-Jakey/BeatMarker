@@ -3,7 +3,8 @@
 [![Python Version](https://img.shields.io/badge/python-3.7%2B-blue.svg)](https://www.python.org/)
 [![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg)](https://opensource.org/licenses/MIT)
 
-A stylish command-line tool to generate timestamp markers based on a song's duration, BPM, and desired beat interval. Ideal for creating marker lists for video editing software (like DaVinci Resolve, Premiere Pro, Final Cut Pro) or other applications requiring timed cues. 
+A stylish command-line tool to generate timestamp markers based on a song's duration, BPM, and desired beat interval. Ideal for creating marker lists for video editing software (like DaVinci Resolve, Premiere Pro, Final Cut Pro) or other applications requiring timed cues.
+
 For users who just want to use it with the workflow. Please check the [guide](https://github.com/Jakey-Jakey/BeatMarker/guide/guide.md)
 
 ![Screenshot Placeholder](https://github.com/Jakey-Jakey/BeatMarker/raw/main/Program%20Screenshot.jpg)
