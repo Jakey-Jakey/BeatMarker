@@ -161,8 +161,6 @@ You now have precisely timed beat markers integrated into your editing project!
 
 Massive thanks to the [Beat Saber Modding Group Wiki](https://bsmg.wiki) community and resources. This guide heavily utilizes ideas and information workflows inspired by their excellent [Basic Audio Setup guide](https://bsmg.wiki/mapping/basic-audio.html).
 
-Special thanks to the original authors of that guide:
+Special thanks to the original authors of that guide, their work was the foundation of this project:
 *   **Kolezan** ([BeatSaver Profile](https://beatsaver.com/profile/4285318))
 *   **Nik (n3tman)** ([BeatSaver Profile](https://beatsaver.com/profile/4286263))
-
-Your work provided a fantastic foundation!
