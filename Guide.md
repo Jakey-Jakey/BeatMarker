@@ -153,6 +153,4 @@ You now have precisely timed beat markers integrated into your editing project!
 ## Troubleshooting Arrow Vortex
 
 *   **`MSVCP120.dll was not found` Error:** Install the Microsoft Visual C++ 2013 Redistributable (**x86** version) from [Microsoft](https://support.microsoft.com/en-us/help/4032938/update-for-visual-c-2013-redistributable-package).
-*   **Arrow Vortex Doesn't Open:** Ensure correct extraction, try running as admin, ensure C++ redistributable is installed.
-
 ---
