@@ -151,7 +151,7 @@ With `beat_markers.txt` generated, here’s how to get those markers into your N
     *   Import this downloaded file into your NLE. The exact import method varies, refer to your NLE's documentation.
 
 3.  **Verify Alignment:** Whichever method you use, play back your sequence in the NLE. The imported markers should align visually and audibly with the beats of your modified audio track, starting from the beat you aligned in Arrow Vortex.
-4.  
+
 ![Finalimage](https://github.com/Jakey-Jakey/BeatMarker/raw/main/guide/Final%20audio%20Prem.jpg)
 
 You now have precisely timed beat markers integrated into your editing project!
