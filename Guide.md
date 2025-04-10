@@ -153,4 +153,16 @@ You now have precisely timed beat markers integrated into your editing project!
 ## Troubleshooting Arrow Vortex
 
 *   **`MSVCP120.dll was not found` Error:** Install the Microsoft Visual C++ 2013 Redistributable (**x86** version) from [Microsoft](https://support.microsoft.com/en-us/help/4032938/update-for-visual-c-2013-redistributable-package).
+*   **Arrow Vortex Doesn't Open:** Ensure correct extraction, try running as admin, ensure C++ redistributable is installed.
+
 ---
+
+## Credits and Thanks
+
+Massive thanks to the [Beat Saber Modding Group Wiki](https://bsmg.wiki) community and resources. This guide heavily utilizes ideas and information workflows inspired by their excellent [Basic Audio Setup guide](https://bsmg.wiki/mapping/basic-audio.html).
+
+Special thanks to the original authors of that guide:
+*   **Kolezan** ([BeatSaver Profile](https://beatsaver.com/profile/4285318))
+*   **Nik (n3tman)** ([BeatSaver Profile](https://beatsaver.com/profile/4286263))
+
+Your work provided a fantastic foundation!
