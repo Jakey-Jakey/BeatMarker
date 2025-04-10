@@ -135,6 +135,7 @@ With `beat_markers.txt` generated, here’s how to get those markers into your N
     *   Paste the copied timestamps into the Markerbox input area.
     *   Ensure the correct sequence/clip is targeted and click the button in Markerbox to add the markers to your Premiere timeline. *(Either `Simple` or `Timecode` format from BeatMarker can work here).*
     *   \[OPTIONAL] Export out your sequence as audio-only with markers included and reimport for a copy of your audio file with all the markers embedded as clip markers.
+    ![Output](https://github.com/Jakey-Jakey/BeatMarker/raw/main/guide/Export%20settings.jpg)
 
     **B) For Other NLEs (DaVinci Resolve, Final Cut Pro, etc.):**
     *   A versatile method is using the free online converter: [editingtools.io Marker Converter](https://editingtools.io/marker/).
@@ -149,7 +150,7 @@ With `beat_markers.txt` generated, here’s how to get those markers into your N
     *   Import this downloaded file into your NLE. The exact import method varies, refer to your NLE's documentation.
 
 3.  **Verify Alignment:** Whichever method you use, play back your sequence in the NLE. The imported markers should align visually and audibly with the beats of your modified audio track, starting from the beat you aligned in Arrow Vortex.
-
+![Finalimage](https://github.com/Jakey-Jakey/BeatMarker/raw/main/guide/Final%20audio%20Prem.jpg)
 You now have precisely timed beat markers integrated into your editing project!
 
 ---
