@@ -49,9 +49,8 @@ Arrow Vortex helps us find the exact BPM and the timing offset needed so the fir
 6.  **Confirm BPM:**
     *   Press `F3` (toggle beat ticks) and `Spacebar` (play). Listen throughout the song. Ensure ticks align with the beat. If not, try another BPM result or note potential variable BPM.
 7.  **Determine Positive Offset:**
-    *   In the `Adjust sync...` window (`Shift+S`), identify the beat where you want markers to start (e.g., the first strong downbeat).
+    *   \[OPTIONAL\] In the `Adjust sync...` window (`Shift+S`), identify the beat where you want markers to start (e.g., the first strong downbeat).
     *   Use the `Move first beat` buttons to align this chosen beat visually with a grid line.
-        *(Image Placeholder: AV Waveform showing beat aligned to grid)*
     *   **Crucial:** Adjust until the `Music offset:` value is **POSITIVE** (e.g., `0.123`, `1.500`). This positive value represents the silence needed later. **If the offset is negative, keep adjusting alignment until it becomes positive.**
         *(Image Placeholder: AV Adjust Sync window showing final POSITIVE Music offset value)*
     *   Listen again (`F3` ticks on) to confirm the alignment sounds correct with the metronome.
