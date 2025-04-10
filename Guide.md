@@ -26,7 +26,7 @@ Arrow Vortex works most reliably with `.ogg` files. We also use Audacity to modi
 2.  **Check Quality (Optional but Recommended):** Ensure your audio looks clean in the waveform view. Avoid low-quality rips if possible.
 3.  **Export as OGG:**
     *   Go to `File > Export > Export as OGG`.
-    *   Save the file somewhere easily accessible (e.g., name it `song_for_av.ogg`).
+    *   Save the file somewhere easily accessible (e.g., name it `audio_for_analysis.ogg`). This OGG file is *only* for Arrow Vortex.
     *   When prompted for OGG Quality, a setting of 5 or 6 is usually sufficient for analysis purposes. Click `Save`.
     *   You can ignore the metadata tags prompt and just click `OK`.
 
@@ -39,7 +39,7 @@ Arrow Vortex works most reliably with `.ogg` files. We also use Audacity to modi
 Arrow Vortex helps us find the exact BPM and the timing offset needed so the first beat you care about happens *after* time zero.
 
 1.  **Open Arrow Vortex:** Launch `ArrowVortex.exe`.
-2.  **Load the OGG:** Drag and drop the `song_for_av.ogg` file you just created into the Arrow Vortex window.
+2.  **Load the OGG:** Drag and drop the `.ogg` file you just created (e.g., `audio_for_analysis.ogg`) into the Arrow Vortex window.
 3.  **View Waveform:** Go to the `View` menu and click `Time based (C-mod)`. Zoom using `Ctrl + Mouse Wheel` to see the waveform clearly.
     *(Image Placeholder: AV Waveform View)*
 4.  **Find BPM:**
@@ -60,7 +60,6 @@ Arrow Vortex helps us find the exact BPM and the timing offset needed so the fir
         *(Image Placeholder: AV Adjust Sync window showing a positive offset after adjustment)*
     *   Listen again with beat ticks (`F3`) on to confirm this alignment sounds correct for where you want the markers to start relative to the music. While aligning to a downbeat is common, the most important thing is that the positive offset value results in the metronome sounding correct for your chosen starting point.
     *   Note down the final **positive** `Music offset:` value (this is the **Offset in seconds**) and the final **BPM** value.
-    *   You can close Arrow Vortex.
 
 ---
 
@@ -79,47 +78,53 @@ Now, use the offset value from Arrow Vortex to add silence to the beginning of y
 4.  **Save Modified Audio:**
     *   Export this *modified* audio. This is the version you'll use in your video editor **and** the version `BeatMarker` needs the duration from.
     *   Go to `File > Export > Export as WAV` (recommended for NLE quality) or `Export as MP3` (if preferred).
-    *   Name it something clear, like `song_synced_with_offset.wav`.
+    *   Name it something clear, like `your_song_final_synced.wav`.
 
 ---
 
-## Step 4: Get Modified Audio Duration
+## Step 4: Determine Duration of Modified Audio
 
-`BeatMarker` needs the total duration of your *offset-adjusted* song.
+`BeatMarker` needs the **total duration** of your audio file *after* you added the silence (e.g., `your_song_final_synced.wav`). This is because the added silence pushes the actual music forward, and BeatMarker calculates timestamps starting from 00:00.000 of this complete file.
 
 *   **Method 1: Automatic (Recommended)**
-    *   Drag the **modified** audio file (`song_synced_with_offset.wav` or similar) directly onto the `BeatMarker.exe` file icon or onto the `beat_marker_generator.py` script in your terminal.
-    *   If successful, `BeatMarker` will display the detected duration.
+    *   Drag the **modified audio file** (the WAV or MP3 you just exported) directly onto the `BeatMarker.exe` file icon or onto the `beat_marker_generator.py` script in your terminal.
+    *   If successful, `BeatMarker` will automatically detect and display the correct duration.
 *   **Method 2: Manual**
-    *   If drag-and-drop isn't used or fails, `BeatMarker` will prompt you.
-    *   In Audacity, you can see the total duration of the modified track (often displayed at the bottom of the window, especially after selecting the entire track with `Ctrl+A`).
-    *   Enter this duration in `MM:SS.sss` format (e.g., `03:45.746`) when prompted by `BeatMarker`.
+    *   If you don't use drag-and-drop, `BeatMarker` will prompt you for the duration.
+    *   To find it, look in Audacity *after* adding silence. Select the entire track (`Ctrl+A` or `Cmd+A`) and the total duration is usually displayed at the bottom of the Audacity window (often labeled "Selection Length" or similar).
+        *(Image Placeholder: Audacity bottom bar showing selection length)*
+    *   Enter this full duration in `MM:SS.sss` format (e.g., `03:45.746`) when prompted by `BeatMarker`.
 
 ---
 
-## Step 5: Generate Markers (BeatMarker)
+## Step 5: Generate Markers with BeatMarker
 
-Run `BeatMarker` with the information for the *modified* audio.
+Now, run the `BeatMarker` tool using the information gathered in the previous steps.
 
 1.  **Run BeatMarker:**
     *   Double-click `BeatMarker.exe`.
     *   Or open a terminal/command prompt, navigate to the script's directory, and run `python beat_marker_generator.py`.
-    *   _(If using drag-and-drop for duration, you would have already done this in Step 4)._
-2.  **Follow Prompts:**
-    *   **Duration:** Provide manually if not auto-detected (Step 4, using the duration of the *modified* file).
-    *   **BPM:** Enter the precise BPM value you found using Arrow Vortex (Step 2, e.g., `125.000`).
-    *   **Marker Interval:** `1` (beat), `2` (half measure), `4` (full measure).
-    *   **Output Format:** `s` (Simple `MM:SS.sss`) or `tc` (Timecode `HH:MM:SS:FF`).
-    *   **Framerate (if `tc` chosen):** Enter the exact framerate of your video editing project (e.g., `23.976`, `29.97`, `60`). **This should match the framerate of the video footage or sequence you intend to use these markers with.**
-3.  **Output:** `BeatMarker` calculates markers starting from `00:00.000` based on the BPM and modified duration. The markers are saved to `beat_markers.txt` in the same directory.
+    *   _(If using drag-and-drop for duration, BeatMarker will have already started and detected the duration in Step 4)._
+2.  **Follow Prompts:** BeatMarker will ask for the following information:
+    *   **Duration:** If not auto-detected via drag-and-drop, enter the **total duration of the modified audio file** (as determined in Step 4).
+    *   **BPM:** Enter the **precise BPM value** you confirmed using Arrow Vortex (from Step 2, e.g., `125.000`).
+    *   **Marker Interval:** Choose how often markers should be placed:
+        *   `1`: Every beat.
+        *   `2`: Every 2 beats (e.g., beats 1 and 3 in a 4/4 measure).
+        *   `4`: Every 4 beats (e.g., the start of each 4/4 measure).
+    *   **Output Format:** Choose the timestamp style:
+        *   `s`: Simple format (`MM:SS.sss`).
+        *   `tc`: Timecode format (`HH:MM:SS:FF`).
+    *   **Framerate (Only if `tc` format chosen):** Enter the **exact framerate** of your video editing project sequence (e.g., `23.976`, `29.97`, `60`). This *must* match your target NLE settings for accurate timecode markers.
+3.  **Output:** `BeatMarker` will calculate the markers based on your inputs and the modified audio's duration. The timestamps are saved to a file named `beat_markers.txt` in the same directory where you ran BeatMarker.
 
 ---
 
 ## Step 6: Use Markers in Your Video Editor
 
-The generated `beat_markers.txt` contains timestamps relative to the start of your *modified* audio file (which now includes the silence padding).
+The generated `beat_markers.txt` contains timestamps relative to the start of your *modified* audio file (which includes the silence padding).
 
-1.  **Import Modified Audio:** Import the `song_synced_with_offset.wav` (or your exported modified file) into your video editing software timeline. Place it at the very beginning of your sequence (00:00:00:00).
+1.  **Import Modified Audio:** Import the final audio file (e.g., `your_song_final_synced.wav`) into your video editing software timeline. Place it at the very beginning of your sequence (00:00:00:00).
 2.  **Import/Place Markers:** Use your editor's method to add markers based on the `beat_markers.txt` file:
     *   **Copy/Paste:** Some editors might allow pasting the list directly onto the timeline or audio clip.
     *   **Manual Placement:** Open `beat_markers.txt`. Go to each timestamp in your editor and place a marker.
