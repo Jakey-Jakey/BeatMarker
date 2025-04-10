@@ -63,16 +63,16 @@ Arrow Vortex helps us find the exact BPM and the timing offset needed so the fir
 
 ## Step 3: Apply Positive Offset & Export Modified Audio (Audacity)
 
-Now, use the offset value from Arrow Vortex to add silence to the beginning of your *original* audio file in Audacity.
+Now, use the offset value from Arrow Vortex to add silence to the beginning of your *original* audio file in Audacity. (You can skip this step if you wish to attempt to figure out the offset yourself in your NLE)
 
 1.  **Go Back to Audacity:** Ensure your *original* audio file is loaded (not the OGG).
 2.  **Select Start:** Use the Selection Tool. Place the cursor at the very beginning of the track (Press `Home` key).
 3.  **Generate Silence:**
     *   Go to `Generate > Silence...`.
     *   Enter the **positive offset value** (in seconds) you noted down from Arrow Vortex into the `Duration` field.
-        *(Image Placeholder: Audacity Generate Silence dialog)*
+![Silence](https://github.com/Jakey-Jakey/BeatMarker/raw/main/guide/silence%20box.jpg)
     *   Click `OK`. Silence is added to the start.
-        *(Image Placeholder: Audacity waveform showing added silence)*
+![Silence Added](https://github.com/Jakey-Jakey/BeatMarker/raw/main/guide/added%20silence.jpg)
 4.  **Save Modified Audio:**
     *   Export this *modified* audio. This is the version you'll use in your video editor **and** the version `BeatMarker` needs the duration from.
     *   Go to `File > Export > Export as WAV` (recommended for NLE quality) or `Export as MP3` (if preferred).
@@ -90,7 +90,7 @@ Now, use the offset value from Arrow Vortex to add silence to the beginning of y
 *   **Method 2: Manual**
     *   If you don't use drag-and-drop, `BeatMarker` will prompt you for the duration.
     *   To find it, look in Audacity *after* adding silence. Select the entire track (`Ctrl+A` or `Cmd+A`) and the total duration is usually displayed at the bottom of the Audacity window (often labeled "Selection Length" or similar).
-        *(Image Placeholder: Audacity bottom bar showing selection length)*
+![Duration info](https://github.com/Jakey-Jakey/BeatMarker/raw/main/guide/duration%20info.jpg)
     *   Enter this full duration in `MM:SS.sss` format (e.g., `03:45.746`) when prompted by `BeatMarker`.
 
 ---
