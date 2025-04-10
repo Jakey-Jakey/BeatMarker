@@ -51,10 +51,10 @@ Arrow Vortex helps us find the exact BPM and the timing offset needed so the fir
 7.  **Ensure a Positive Offset:**
     *   The primary goal here is to ensure the `Music offset:` value shown in the `Adjust sync...` window (`Shift+S`) is **POSITIVE**. A positive offset (e.g., `0.123`, `1.500`) is required so you can correctly add silence at the beginning of your track in Audacity later.
     *   Use the `Move first beat` buttons to shift the audio relative to the grid. Keep clicking until the `Music offset:` value becomes positive. (Try and mostly use the 1-beat buttons, half-beat modifications can go wrong easily.)
-        ![Arrow Vortex Adjust Sync window showing positive offset](images/Adjust Sync window.jpg) *(Adjust image if needed to show a clear positive value)*
+        ![Arrow Vortex Adjust Sync window showing positive offset](https://github.com/Jakey-Jakey/BeatMarker/raw/main/guide/negativeaura.jpg)
     *   **Guideline:** Aim for enough positive offset so there's *at least* one empty measure's worth of time (typically 2-4 seconds, depending on the song's BPM) before the first sound you intend to place a marker on. This provides necessary padding.
     *   **(Optional) Align to a Specific Beat:** While adjusting for a positive offset, you *can* also try to visually align a specific beat (like the first strong downbeat you care about) with a grid line if it helps you visualize the timing. However, the most critical outcome is achieving a positive offset value.
-        ![Arrow Vortex Waveform showing beat aligned to grid](images/First Waveform.jpg) *(Adjust image if needed)*
+        ![Arrow Vortex Waveform showing beat aligned to grid](https://github.com/Jakey-Jakey/BeatMarker/raw/main/guide/sucessful%20sync.jpg)
     *   **Final Check:** Before proceeding, double-check that the `Music offset:` displayed is positive. If it's negative or zero, continue using the `Move first beat` buttons.
     *   Listen again (`F3` ticks on) to confirm the timing sounds correct relative to the metronome with the current offset.
     *   Note down the final **positive** `Music offset:` value and the confirmed **BPM**.
