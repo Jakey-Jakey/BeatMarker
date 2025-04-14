@@ -27,7 +27,7 @@ Arrow Vortex works most reliably with `.ogg` files. We also use Audacity to modi
 3.  **Export as OGG:**
     *   Go to `File > Export > Export as OGG`.
     *   Save the file somewhere easily accessible (e.g., name it `audio_for_analysis.ogg`). This OGG file is *only* for Arrow Vortex.
-    *   When prompted for OGG Quality, a setting of 5 or 6 is usually sufficient for analysis purposes. Click `Save`.
+    *   When prompted for OGG Quality, the max setting is perfect for analysis. Click `Save`.
     *   You can ignore the metadata tags prompt and just click `OK`.
 
 **Important:** Keep your *original* audio file project open in Audacity, or save it as an Audacity Project (`.aup3`), as you will modify it based on Arrow Vortex's findings.
