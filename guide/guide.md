@@ -134,7 +134,7 @@ With `beat_markers.txt` generated, here’s how to get those markers into your N
     *   In Premiere Pro, open the Markerbox extension panel (`Window > Extensions > Markerbox`).
     *   Paste the copied timestamps into the Markerbox input area.
     *   Ensure the correct sequence is targeted and click the button in Markerbox to add the markers to your Premiere timeline. *(Either `Simple` or `Timecode` format from BeatMarker can work here).*
-    *   If you get a timecode error, right-click your sequence `Sequence Settings -> Display Format` for video and change it until it works, you can modify the displayed timecode and change it back after.
+    *   If you get a timecode error from Markerbox, right-click your sequence `Sequence Settings -> Display Format` for video and change it until it works, you can modify the displayed timecode and change it back after.
     *   \[OPTIONAL] Export out your sequence as audio-only with markers included and reimport for a copy of your audio file with all the markers embedded as clip markers.
     
     ![Output](https://github.com/Jakey-Jakey/BeatMarker/raw/main/guide/Export%20settings.jpg)
