@@ -63,7 +63,7 @@ Arrow Vortex helps us find the exact BPM and the timing offset needed so the fir
 
 ## Step 3: Apply Positive Offset & Export Modified Audio (Audacity)
 
-Now, use the offset value from Arrow Vortex to add silence to the beginning of your *original* audio file in Audacity. (You can skip this step if you wish to attempt to figure out the offset yourself in your NLE)
+Now, use the offset value from Arrow Vortex to add silence to the beginning of your *original* audio file in Audacity. (You can skip this step if you wish to attempt to figure out the offset yourself in your NLE, it's not super hard)
 
 1.  **Go Back to Audacity:** Ensure your *original* audio file is loaded (not the OGG).
 2.  **Select Start:** Use the Selection Tool. Place the cursor at the very beginning of the track (Press `Home` key).
